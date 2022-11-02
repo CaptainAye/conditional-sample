@@ -7,6 +7,6 @@ import org.springframework.core.type.AnnotatedTypeMetadata;
 public class DoThing2Condition implements Condition {
     @Override
     public boolean matches(ConditionContext context, AnnotatedTypeMetadata metadata) {
-        return System.getenv("DO_THING").equals("2");
+        return !System.getProperty("DO_THING").equals("1");
     }
 }
